@@ -6,14 +6,14 @@ import styles from "./index.module.css";
 const GoogleMain: FC = () => {
   return (
     <main>
-      {/* <p style={{ fontSize: 50 }}>FONT: DEFAULT</p>
+      <p style={{ fontSize: 50 }}>FONT: DEFAULT</p>
       <p>CLS TEST</p>
       <hr />
       <p className={noto_sans.className} style={{ fontSize: 50 }}>
         FONT: NOTO SANS
       </p>
       <p>CLS TEST</p>
-      <hr /> */}
+      <hr />
       <p className={baskervville.className} style={{ fontSize: 50 }}>
         FONT: NEXT
       </p>
