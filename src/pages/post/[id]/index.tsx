@@ -1,5 +1,5 @@
 import { fetchPost, fetchPostList } from "@/api/post";
-import { PostDetail } from "@/domains/post/[id]";
+import { PostDetail } from "@/domains/post/detail";
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from "next";
 import { ComponentProps, FC } from "react";
 
