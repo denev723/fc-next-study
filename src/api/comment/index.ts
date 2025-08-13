@@ -5,7 +5,7 @@
 import { ErrorResponse } from "@/api/types";
 import { NextApiRequest, NextApiResponse } from "next";
 
-interface Comment {
+export interface Comment {
   postId: number;
   id: number;
   name: string;
@@ -13,7 +13,7 @@ interface Comment {
   body: string;
 }
 
-async function fetchComments(post_id: string): Promise<Comment[]> {
+export async function fetchComments(post_id: string): Promise<Comment[]> {
   const result = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${post_id}/comments`
   );

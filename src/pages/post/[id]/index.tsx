@@ -1,3 +1,4 @@
+import { fetchComments } from "@/api/comment";
 import { fetchPost, fetchPostList } from "@/api/post";
 import { PostDetail } from "@/domains/post/detail";
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from "next";
@@ -36,10 +37,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
   }
 
   const post = await fetchPost(id);
+  const commentList = await fetchComments(id);
 
   return {
     props: {
       post,
+      commentList,
     },
   };
 };
