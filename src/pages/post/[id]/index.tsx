@@ -36,15 +36,25 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
     };
   }
 
-  const post = await fetchPost(id);
-  const commentList = await fetchComments(id);
+  try {
+    const [post, commentList] = await Promise.all([
+      fetchPost(id),
+      fetchComments(id),
+    ]);
+    // const post = await fetchPost(id);
+    // const commentList = await fetchComments(id);
 
-  return {
-    props: {
-      post,
-      commentList,
-    },
-  };
+    return {
+      props: {
+        post,
+        commentList,
+      },
+    };
+  } catch (e) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 const PostDetailPage: FC<Props> = (props) => {
